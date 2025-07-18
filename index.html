@@ -256,6 +256,24 @@
             box-shadow: 0 8px 25px rgba(0, 212, 170, 0.4);
         }
 
+        /* Social Icons */
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            transition: all 0.3s ease;
+        }
+
+        /* GitHub specific styling - inverted and enlarged */
+        .social-link[title="GitHub"] .social-icon {
+            width: 28px;
+            height: 28px;
+            filter: invert(1);
+        }
+
+        .social-link[title="GitHub"]:hover .social-icon {
+            filter: invert(0);
+        }
+
         /* Social text that appears on hover */
         .social-text {
             position: absolute;
@@ -301,9 +319,8 @@
             border-top-color: #00d4aa;
         }
 
-        /* Only LinkedIn and GitHub icons */
+        /* Only LinkedIn icon text (removed GitHub) */
         .social-link[title="LinkedIn"]::after { content: "LI"; position: absolute; font-size: 14px; font-weight: bold; }
-        .social-link[title="GitHub"]::after { content: "GH"; position: absolute; font-size: 14px; font-weight: bold; }
 
         /* CTA Button */
         .cta-button {
@@ -482,7 +499,7 @@
 
         function downloadCV() {
             // Replace with your actual CV file path
-            const cvUrl = 'documents/Imran Ahmed Kamal CV.pdf;
+            const cvUrl = 'documents/Imran Ahmed Kamal CV.pdf';
             
             // Create a temporary link element
             const link = document.createElement('a');
