@@ -481,8 +481,18 @@
         }
 
         function downloadCV() {
-            // Add CV download functionality here
-            alert('CV download functionality - replace with link to your CV file');
+            // Replace with your actual CV file path
+            const cvUrl = 'documents/Imran Ahmed Kamal CV.pdf;
+            
+            // Create a temporary link element
+            const link = document.createElement('a');
+            link.href = cvUrl;
+            link.download = 'Imran Ahmed Kamal CV.pdf'; // This will be the downloaded filename
+            
+            // Trigger the download
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
 
         document.querySelectorAll('.nav-item').forEach(item => {
