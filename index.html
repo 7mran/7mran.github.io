@@ -842,6 +842,29 @@
       padding: 0.5rem 1rem;
       font-size: 0.85rem;
       }
+      .learn-more {
+      color: #00d4aa;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-top: 1rem;
+      text-align: center;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+      }
+
+      .card:hover .learn-more {
+      opacity: 1;
+      transform: translateY(-2px);
+      }
+   
+      .learn-more::after {
+      content: ' →';
+      transition: transform 0.3s ease;
+      }
+   
+      .card:hover .learn-more::after {
+      transform: translateX(3px);
+      }
       }
    </style>
 </head>
@@ -948,17 +971,22 @@
          </p>
          <div class="cards-container">
             <div class="card" data-modal="academic-projects">
-               <h3>📚 Academic Projects</h3>
-               <p>Working on my final year dissertation focusing on machine learning applications in data analysis. Participating in advanced coursework in AI and distributed systems.</p>
-            </div>
-            <div class="card" data-modal="competitions">
-               <h3>🏆 Competitions</h3>
-               <p>Participating in coding competitions and hackathons. Recently competed in university-level programming contests and tech challenges.</p>
-            </div>
-            <div class="card" data-modal="networking">
-               <h3>🤝 Networking</h3>
-               <p>Attending tech meetups and career fairs in London. Building connections with industry professionals and fellow students in the tech community.</p>
-            </div>
+            <h3>📚 Academic Projects</h3>
+            <p>Working on my final year dissertation focusing on machine learning applications in data analysis. Participating in advanced coursework in AI and distributed systems.</p>
+            <div class="learn-more">Learn More</div>
+         </div>
+         
+         <div class="card" data-modal="competitions">
+            <h3>🏆 Competitions</h3>
+            <p>Participating in coding competitions and hackathons. Recently competed in university-level programming contests and tech challenges.</p>
+            <div class="learn-more">Learn More</div>
+         </div>
+         
+         <div class="card" data-modal="networking">
+            <h3>🤝 Networking</h3>
+            <p>Attending tech meetups and career fairs in London. Building connections with industry professionals and fellow students in the tech community.</p>
+            <div class="learn-more">Learn More</div>
+         </div>
          </div>
       </div>
    </section>
@@ -969,22 +997,29 @@
             A collection of projects that demonstrate my technical skills and passion for creating meaningful solutions.
          </p>
          <div class="cards-container">
-            <div class="card" data-modal="ai-tool">
-               <h3>🤖 AI Data Analysis Tool</h3>
-               <p>Built a comprehensive data analysis platform using Python...</p>
-            </div>
-            <div class="card" data-modal="web-app">
-               <h3>🌐 Web Application</h3>
-               <p>Developed a full-stack web application using React and Node.js...</p>
-            </div>
-            <div class="card" data-modal="dashboard">
-               <h3>📊 Data Visualization Dashboard</h3>
-               <p>Created an interactive dashboard for complex data visualization...</p>
-            </div>
-            <div class="card" data-modal="open-source">
-               <h3>🔧 Open Source Contributions</h3>
-               <p>Contributing to various open-source projects on GitHub...</p>
-            </div>
+            <<div class="card" data-modal="ai-tool">
+            <h3>🤖 AI Data Analysis Tool</h3>
+            <p>Built a comprehensive data analysis platform using Python...</p>
+            <div class="learn-more">Learn More</div>
+         </div>
+         
+         <div class="card" data-modal="web-app">
+            <h3>🌐 Web Application</h3>
+            <p>Developed a full-stack web application using React and Node.js...</p>
+            <div class="learn-more">Learn More</div>
+         </div>
+         
+         <div class="card" data-modal="dashboard">
+            <h3>📊 Data Visualization Dashboard</h3>
+            <p>Created an interactive dashboard for complex data visualization...</p>
+            <div class="learn-more">Learn More</div>
+         </div>
+         
+         <div class="card" data-modal="open-source">
+            <h3>🔧 Open Source Contributions</h3>
+            <p>Contributing to various open-source projects on GitHub...</p>
+            <div class="learn-more">Learn More</div>
+         </div>
          </div>
       </div>
    </section>
