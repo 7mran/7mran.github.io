@@ -388,29 +388,63 @@
       gap: 2rem;
       margin-top: 3rem;
       }
-      .card {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      padding: 2rem;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      }
-      .card:hover {
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.08);
-      border-color: #00d4aa;
-      box-shadow: 0 15px 30px rgba(0, 212, 170, 0.2);
-      }
-      .card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #00d4aa;
-      }
-      .card p {
-      color: #cccccc;
-      line-height: 1.6;
-      }
+     .card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px; /* Ensure consistent card height */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #00d4aa;
+  box-shadow: 0 15px 30px rgba(0, 212, 170, 0.2);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #00d4aa;
+}
+
+.card p {
+  color: #cccccc;
+  line-height: 1.6;
+  flex-grow: 1; /* This pushes the learn more to the bottom */
+}
+
+/* Learn More styling */
+.learn-more {
+  color: #00d4aa;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  text-align: left; /* Changed from center to left */
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  align-self: flex-start; /* Align to the left */
+}
+
+.card:hover .learn-more {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.learn-more::after {
+  content: ' →';
+  transition: transform 0.3s ease;
+}
+
+.card:hover .learn-more::after {
+  transform: translateX(3px);
+}
       /* Modal Styles */
       .modal-overlay {
       position: fixed;
