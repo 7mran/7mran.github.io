@@ -474,6 +474,120 @@ color: #cccccc;
 line-height: 1.6;
 }
 
+  /* Modal Styles */
+  .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      padding: 2rem;
+      box-sizing: border-box;
+  }
+
+  .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+  }
+
+  .modal-content {
+      background: #1a1a1a;
+      border-radius: 15px;
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      border: 1px solid rgba(0, 212, 170, 0.3);
+      transform: scale(0.8) translateY(50px);
+      transition: all 0.3s ease;
+  }
+
+  .modal-overlay.active .modal-content {
+      transform: scale(1) translateY(0);
+  }
+
+  .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      z-index: 2001;
+  }
+
+  .modal-close:hover {
+      background: #ff4757;
+      transform: scale(1.1);
+  }
+
+  .modal-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 15px 15px 0 0;
+  }
+
+  .modal-body {
+      padding: 2rem;
+  }
+
+  .modal-title {
+      font-size: 2rem;
+      color: #00d4aa;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #c47dff 20%, #00d4aa 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+  }
+
+  .modal-text {
+      color: #cccccc;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+  }
+
+  .modal-tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+  }
+
+  .tech-tag {
+      background: rgba(0, 212, 170, 0.2);
+      color: #00d4aa;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      border: 1px solid rgba(0, 212, 170, 0.3);
+  }
+
+  body.modal-open {
+      overflow: hidden;
+  }
+
 /* Footer */
 footer {
 background: rgba(26, 26, 26, 0.95);
@@ -790,44 +904,48 @@ Currently in my final year at City, University of London, I'm constantly explori
 pushing the boundaries of what's possible with code.
 </p>
 <div class="cards-container">
-<div class="card">
-<h3>🎓 Education</h3>
-<p>Final Year Computer Science Student at City, University of London. Focusing on advanced algorithms, machine learning, and software engineering principles.</p>
-</div>
-<div class="card">
-<h3>💻 Skills</h3>
-<p>Proficient in Python, JavaScript, Java, and C++. Experienced with frameworks like React, Django, and TensorFlow. Always learning new technologies.</p>
-</div>
-<div class="card">
-<h3>🌟 Interests</h3>
-<p>Data Science, AI/ML, Web Development, and Software Architecture. I enjoy solving complex problems and building innovative solutions.</p>
-</div>
+    <div class="card" data-modal="ai-tool">
+        <h3>🤖 AI Data Analysis Tool</h3>
+        <p>Built a comprehensive data analysis platform using Python...</p>
+    </div>
+    <div class="card" data-modal="web-app">
+        <h3>🌐 Web Application</h3>
+        <p>Developed a full-stack web application using React and Node.js...</p>
+    </div>
+    <div class="card" data-modal="dashboard">
+        <h3>📊 Data Visualization Dashboard</h3>
+        <p>Created an interactive dashboard for complex data visualization...</p>
+    </div>
+    <div class="card" data-modal="open-source">
+        <h3>🔧 Open Source Contributions</h3>
+        <p>Contributing to various open-source projects on GitHub...</p>
+    </div>
 </div>
 </div>
 </section>
 
-<section id="activities">
-<div class="section-content">
-<h2 class="section-title">Recent Activities</h2>
-<p class="section-text">
-Here are some of my recent academic and professional activities that showcase my journey in computer science.
-</p>
-<div class="cards-container">
-<div class="card">
-<h3>📚 Academic Projects</h3>
-<p>Working on my final year dissertation focusing on machine learning applications in data analysis. Participating in advanced coursework in AI and distributed systems.</p>
-</div>
-<div class="card">
-<h3>🏆 Competitions</h3>
-<p>Participating in coding competitions and hackathons. Recently competed in university-level programming contests and tech challenges.</p>
-</div>
-<div class="card">
-<h3>🤝 Networking</h3>
-<p>Attending tech meetups and career fairs in London. Building connections with industry professionals and fellow students in the tech community.</p>
-</div>
-</div>
-</div>
-</section>
+  <section id="activities">
+  <div class="section-content">
+  <h2 class="section-title">Recent Activities</h2>
+  <p class="section-text">
+  Here are some of my recent academic and professional activities that showcase my journey in computer science.
+  </p>
+  <div class="cards-container">
+  <div class="card" data-modal="academic-projects">
+  <h3>📚 Academic Projects</h3>
+  <p>Working on my final year dissertation focusing on machine learning applications in data analysis. Participating in advanced coursework in AI and distributed systems.</p>
+  </div>
+  <div class="card" data-modal="competitions">
+  <h3>🏆 Competitions</h3>
+  <p>Participating in coding competitions and hackathons. Recently competed in university-level programming contests and tech challenges.</p>
+  </div>
+  <div class="card" data-modal="networking">
+  <h3>🤝 Networking</h3>
+  <p>Attending tech meetups and career fairs in London. Building connections with industry professionals and fellow students in the tech community.</p>
+  </div>
+  </div>
+  </div>
+  </section>
 
 <section id="projects">
 <div class="section-content">
@@ -836,25 +954,37 @@ Here are some of my recent academic and professional activities that showcase my
 A collection of projects that demonstrate my technical skills and passion for creating meaningful solutions.
 </p>
 <div class="cards-container">
-<div class="card">
-<h3>🤖 AI Data Analysis Tool</h3>
-<p>Built a comprehensive data analysis platform using Python and machine learning libraries. Features automated insights generation and interactive visualizations.</p>
-</div>
-<div class="card">
-<h3>🌐 Web Application</h3>
-<p>Developed a full-stack web application using React and Node.js. Implemented user authentication, real-time features, and responsive design.</p>
-</div>
-<div class="card">
-<h3>📊 Data Visualization Dashboard</h3>
-<p>Created an interactive dashboard for complex data visualization using D3.js and Python. Helps users understand large datasets through intuitive charts and graphs.</p>
-</div>
-<div class="card">
-<h3>🔧 Open Source Contributions</h3>
-<p>Contributing to various open-source projects on GitHub. Focusing on improving documentation, fixing bugs, and adding new features to community projects.</p>
-</div>
+    <div class="card" data-modal="ai-tool">
+        <h3>🤖 AI Data Analysis Tool</h3>
+        <p>Built a comprehensive data analysis platform using Python...</p>
+    </div>
+    <div class="card" data-modal="web-app">
+        <h3>🌐 Web Application</h3>
+        <p>Developed a full-stack web application using React and Node.js...</p>
+    </div>
+    <div class="card" data-modal="dashboard">
+        <h3>📊 Data Visualization Dashboard</h3>
+        <p>Created an interactive dashboard for complex data visualization...</p>
+    </div>
+    <div class="card" data-modal="open-source">
+        <h3>🔧 Open Source Contributions</h3>
+        <p>Contributing to various open-source projects on GitHub...</p>
+    </div>
 </div>
 </div>
 </section>
+
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <img class="modal-image" id="modalImage" src="" alt="">
+        <div class="modal-body">
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <div class="modal-tech-stack" id="modalTechStack"></div>
+            <div class="modal-text" id="modalText"></div>
+        </div>
+    </div>
+</div>
 
 <footer>
 <p>All rights reserved by Imran Ahmed Kamal<br>©2025</p>
@@ -955,28 +1085,145 @@ scrollIndicator.style.visibility = 'visible';
 }
 });
 
-// Intersection Observer for animations
-const observerOptions = {
-threshold: 0.1,
-rootMargin: '0px 0px -50px 0px'
-};
+  const modalData = {
+      'ai-tool': {
+          image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=300&fit=crop',
+          title: 'AI Data Analysis Tool',
+          tech: ['Python', 'Machine Learning', 'Pandas', 'Scikit-learn', 'Matplotlib'],
+          content: `
+              <p>Developed a comprehensive data analysis platform that leverages machine learning algorithms to provide automated insights from complex datasets.</p>
+              <p>The tool features an intuitive interface for data upload, preprocessing, and visualization. Users can generate interactive charts, perform statistical analysis, and export results in various formats.</p>
+              <p>Implemented advanced ML models including regression analysis, classification algorithms, and clustering techniques. The platform supports real-time data processing and can handle large datasets efficiently.</p>
+          `
+      },
+      'web-app': {
+          image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=300&fit=crop',
+          title: 'Full-Stack Web Application',
+          tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Socket.io'],
+          content: `
+              <p>Built a feature-rich web application from the ground up, implementing both frontend and backend components with modern web technologies.</p>
+              <p>The application includes user authentication, real-time messaging capabilities, and a responsive design that works seamlessly across all devices. Implemented secure API endpoints and database integration.</p>
+              <p>Features include user profiles, content management, real-time notifications, and an admin dashboard. The application is deployed on cloud infrastructure with CI/CD pipeline integration.</p>
+          `
+      },
+      'dashboard': {
+          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=300&fit=crop',
+          title: 'Data Visualization Dashboard',
+          tech: ['D3.js', 'Python', 'Flask', 'JavaScript', 'Chart.js'],
+          content: `
+              <p>Created an interactive dashboard that transforms complex datasets into intuitive and engaging visual representations.</p>
+              <p>The dashboard supports multiple data formats and provides various visualization options including line charts, bar graphs, heat maps, and custom interactive plots. Users can filter data, zoom into specific time ranges, and export visualizations.</p>
+              <p>Implemented real-time data updates and collaborative features allowing multiple users to share insights and annotations on the same dashboard.</p>
+          `
+      },
+      'open-source': {
+          image: 'https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=800&h=300&fit=crop',
+          title: 'Open Source Contributions',
+          tech: ['Git', 'GitHub', 'Documentation', 'Testing', 'Code Review'],
+          content: `
+              <p>Actively contributing to various open-source projects across different domains including web development, data science, and developer tools.</p>
+              <p>My contributions include bug fixes, feature implementations, documentation improvements, and code optimizations. I focus on projects that align with my interests in AI, web development, and data analysis.</p>
+              <p>Through these contributions, I've gained valuable experience in collaborative development, code review processes, and maintaining high-quality codebases used by developers worldwide.</p>
+          `
+      },
+      'academic-projects': {
+          image: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&h=300&fit=crop',
+          title: 'Academic Projects',
+          tech: ['Machine Learning', 'Python', 'Research', 'Data Analysis', 'Statistics'],
+          content: `
+              <p>Currently working on my final year dissertation focusing on machine learning applications in predictive data analysis, exploring novel approaches to improve accuracy and efficiency.</p>
+              <p>Completed advanced coursework in Artificial Intelligence, including neural networks, natural language processing, and computer vision. Participated in distributed systems projects involving cloud computing and microservices architecture.</p>
+              <p>Collaborated on group projects developing intelligent systems for real-world applications, including recommendation engines and automated decision-making tools.</p>
+          `
+      },
+      'competitions': {
+          image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=300&fit=crop',
+          title: 'Programming Competitions',
+          tech: ['Algorithms', 'Data Structures', 'Problem Solving', 'C++', 'Java'],
+          content: `
+              <p>Actively participating in competitive programming contests including university-level championships and online coding challenges on platforms like Codeforces and HackerRank.</p>
+              <p>Recently competed in the British Informatics Olympiad and various hackathons across London, focusing on algorithmic problem-solving and time-efficient coding under pressure.</p>
+              <p>Achieved top rankings in several local programming contests and contributed to team victories in collaborative coding challenges, developing skills in rapid prototyping and optimization.</p>
+          `
+      },
+      'networking': {
+          image: 'https://images.unsplash.com/photo-1515169067868-5387ec356754?w=800&h=300&fit=crop',
+          title: 'Professional Networking',
+          tech: ['Communication', 'Career Development', 'Industry Insights', 'Mentorship', 'Leadership'],
+          content: `
+              <p>Actively engaging with the London tech community through meetups, career fairs, and industry conferences. Building meaningful connections with software engineers, data scientists, and tech entrepreneurs.</p>
+              <p>Participating in tech talks and workshops focused on emerging technologies like AI, blockchain, and cloud computing. Attending career development sessions and interview preparation workshops.</p>
+              <p>Volunteering at university tech events and mentoring junior students in programming and career guidance, while seeking mentorship from industry professionals to accelerate my own growth.</p>
+          `
+      }
+  };
 
-const observer = new IntersectionObserver((entries) => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.style.opacity = '1';
-entry.target.style.transform = 'translateY(0)';
+  
+
+// Function to open modal
+function openModal(modalId) {
+    const data = modalData[modalId];
+    
+    if (data) {
+        document.getElementById('modalImage').src = data.image;
+        document.getElementById('modalTitle').textContent = data.title;
+        document.getElementById('modalText').innerHTML = data.content;
+        
+        // Add tech stack tags
+        const techContainer = document.getElementById('modalTechStack');
+        techContainer.innerHTML = '';
+        data.tech.forEach(tech => {
+            const tag = document.createElement('span');
+            tag.className = 'tech-tag';
+            tag.textContent = tech;
+            techContainer.appendChild(tag);
+        });
+        
+        document.getElementById('modalOverlay').classList.add('active');
+        document.body.classList.add('modal-open');
+    }
 }
-});
-}, observerOptions);
 
-// Observe all cards for animation
-document.querySelectorAll('.card').forEach(card => {
-card.style.opacity = '0';
-card.style.transform = 'translateY(30px)';
-card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-observer.observe(card);
-});
+// Function to close modal
+function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('active');
+    document.body.classList.remove('modal-open');
+}
+
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Add click event listeners to modal cards
+    document.querySelectorAll('.card[data-modal]').forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', function() {
+            const modalId = this.getAttribute('data-modal');
+            openModal(modalId);
+        });
+    });
+
+    // Close modal event listeners
+    const modalClose = document.getElementById('modalClose');
+    const modalOverlay = document.getElementById('modalOverlay');
+    
+    if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+    }
+    
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+  });
 </script>
 </body>
 </html>
