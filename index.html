@@ -1199,7 +1199,7 @@
             <span class="tag">🎯 User Experience</span>
             <span class="tag">📏 Scalability</span>
             <span class="tag">⚡️ Performance</span>
-                     </div>
+         </div>
       </div>
    </section>
    <section id="portfolio">
@@ -1216,7 +1216,7 @@
             Here are some of my recent academic and professional activities that showcase my journey in computer science.
          </p>
          <div class="cards-container">
-            <div class="card" data-modal="academic-projects">
+            <div class="card" data-modal="IEUK">
                <img src="images/FPSC_2024.jpg" alt="IEUK" class="card-image">
                <div class="card-content">
                   <div class="card-tags">
@@ -1228,7 +1228,7 @@
                   <div class="learn-more">Learn More</div>
                </div>
             </div>
-            <div class="card" data-modal="competitions">
+            <div class="card" data-modal="DigData">
                <img src="images/Screenshot 2025-07-23 at 04.17.44.png" alt="DigData class="card-image">
                <div class="card-content">
                   <div class="card-tags">
@@ -1240,7 +1240,7 @@
                   <div class="learn-more">Learn More</div>
                </div>
             </div>
-            <div class="card" data-modal="networking">
+            <div class="card" data-modal="AWS">
                <img src="images/AWSsummit.png" alt="AWS" class="card-image">
                <div class="card-content">
                   <div class="card-tags">
@@ -1259,7 +1259,7 @@
             A collection of projects that demonstrate my technical skills and passion for creating meaningful solutions.
          </p>
          <div class="cards-container">
-            <div class="card" data-modal="academic-projects">
+            <div class="card" data-modal="FPL">
                <img src="images/fantasy-football01.png" alt="Fantasy Premier League" class="card-image">
                <div class="card-content">
                   <div class="card-tags">
@@ -1271,7 +1271,7 @@
                   <div class="learn-more">Learn More</div>
                </div>
             </div>
-            <div class="card" data-modal="competitions">
+            <div class="card" data-modal="E-Commerce">
                <img src="images/ecommerce.avif" alt="E-Commerce Price Tracker" class="card-image">
                <div class="card-content">
                   <div class="card-tags">
@@ -1284,7 +1284,7 @@
                   <div class="learn-more">Learn More</div>
                </div>
             </div>
-            <div class="card" data-modal="dashboard">
+            <div class="card" data-modal="Fraud">
                <img src="images/Security_Header.jpg" alt="Security Header" class="card-image">
                <div class="card-content">
                   <div class="card-tags">
@@ -1411,76 +1411,67 @@
       });
 
         const modalData = {
-            'ai-tool': {
-                image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=300&fit=crop',
-                title: 'AI Data Analysis Tool',
-                tech: ['Python', 'Machine Learning', 'Pandas', 'Scikit-learn', 'Matplotlib'],
+            'FPL': {
+                image: 'images/fantasy-football01.png',
+                title: 'Fantasy Premier League Data Analysis Project',
+                tech: ['Python', 'Data Analysis'],
                 content: `
-                    <p>Developed a comprehensive data analysis platform that leverages machine learning algorithms to provide automated insights from complex datasets.</p>
-                    <p>The tool features an intuitive interface for data upload, preprocessing, and visualization. Users can generate interactive charts, perform statistical analysis, and export results in various formats.</p>
-                    <p>Implemented advanced ML models including regression analysis, classification algorithms, and clustering techniques. The platform supports real-time data processing and can handle large datasets efficiently.</p>
+                    <p>To</p>
+                    <p>Be</p>
+                    <p>Added</p>
                 `
             },
-            'web-app': {
-                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=300&fit=crop',
-                title: 'Full-Stack Web Application',
-                tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Socket.io'],
+            'E-Commerce': {
+                image: 'images/ecommerce.avif',
+                title: 'E-Commerce Price Tracker',
+                tech: ['Python', 'Web Scraping', 'Excel'],
                 content: `
-                    <p>Built a feature-rich web application from the ground up, implementing both frontend and backend components with modern web technologies.</p>
-                    <p>The application includes user authentication, real-time messaging capabilities, and a responsive design that works seamlessly across all devices. Implemented secure API endpoints and database integration.</p>
-                    <p>Features include user profiles, content management, real-time notifications, and an admin dashboard. The application is deployed on cloud infrastructure with CI/CD pipeline integration.</p>
+                    <p>To</p>
+                    <p>Be</p>
+                    <p>Added</p>
                 `
             },
-            'dashboard': {
-                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=300&fit=crop',
-                title: 'Data Visualization Dashboard',
+            'Fraud': {
+                image: 'images/Security_Header.jpg',
+                title: 'Fraud Prevention Analysis',
                 tech: ['D3.js', 'Python', 'Flask', 'JavaScript', 'Chart.js'],
                 content: `
-                    <p                    Created an interactive dashboard that transforms complex datasets into intuitive and engaging visual representations.</p>
-                    <p>The dashboard supports multiple data formats and provides various visualization options including line charts, bar graphs, heat maps, and custom interactive plots. Users can filter data, zoom into specific time ranges, and export visualizations.</p>
-                    <p>Implemented real-time data updates and collaborative features allowing multiple users to share insights and annotations on the same dashboard.</p>
+                    <p>To</p>
+                    <p>Be</p>
+                    <p>Added</p>
                 `
+   
             },
-            'open-source': {
-                image: 'https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=800&h=300&fit=crop',
-                title: 'Open Source Contributions',
-                tech: ['Git', 'GitHub', 'Documentation', 'Testing', 'Code Review'],
+            'DigData': {
+                image: 'images/Screenshot 2025-07-23 at 04.17.44.png',
+                title: 'Digdata x Experian Virtual Work Experience - Data Analysis',
+                tech: ['Pattern Recognition', 'Financial Analysis'],
                 content: `
-                    <p>Actively contributing to various open-source projects across different domains including web development, data science, and developer tools.</p>
-                    <p>My contributions include bug fixes, feature implementations, documentation improvements, and code optimizations. I focus on projects that align with my interests in AI, web development, and data analysis.</p>
-                    <p>Through these contributions, I've gained valuable experience in collaborative development, code review processes, and maintaining high-quality codebases used by developers worldwide.</p>
-                `
-            },
-            'academic-projects': {
-                image: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&h=300&fit=crop',
-                title: 'Academic Projects',
-                tech: ['Machine Learning', 'Python', 'Research', 'Data Analysis', 'Statistics'],
-                content: `
-                    <p>Currently working on my final year dissertation focusing on machine learning applications in predictive data analysis, exploring novel approaches to improve accuracy and efficiency.</p>
-                    <p>Completed advanced coursework in Artificial Intelligence, including neural networks, natural language processing, and computer vision. Participated in distributed systems projects involving cloud computing and microservices architecture.</p>
-                    <p>Collaborated on group projects developing intelligent systems for real-world applications, including recommendation engines and automated decision-making tools.</p>
+                    <p>To</p>
+                    <p>Be</p>
+                    <p>Added</p>
 
                 `
             },
-            'competitions': {
-                image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=300&fit=crop',
-                title: 'Programming Competitions',
-                tech: ['Algorithms', 'Data Structures', 'Problem Solving', 'C++', 'Java'],
+            'IEUK': {
+                image: 'images/FPSC_2024.jpg',
+                title: 'Bright Network IEUK 2025 - Consulting',
+                tech: ['Consulting', 'Business Intelligence'],
                 content: `
-                    <p>Actively participating in competitive programming contests including university-level championships and online coding challenges on platforms like Codeforces and HackerRank.</p>
-                    <p>Recently competed in the British Informatics Olympiad and various hackathons across London, focusing on algorithmic problem-solving and time-efficient coding under pressure.</p>
-                    <p>Achieved top rankings in several local programming contests and contributed to team victories in collaborative coding challenges, developing skills in rapid prototyping and optimization.</p>
+                    <p>To</p>
+                    <p>Be</p>
+                    <p>Added</p>
                 `
             },
-            'networking': {
-                image: 'https://images.unsplash.com/photo-1515169067868-5387ec356754?w=800&h=300&fit=crop',
-                title: 'Professional Networking',
-                tech: ['Communication', 'Career Development', 'Industry Insights', 'Mentorship', 'Leadership'],
+            'AWS': {
+                image: 'images/AWSsummit.png',
+                title: 'AWS Summit 2025',
+                tech: ['AI Innovation', 'Cloud Solutions'],
                 content: `
-                    <p>Actively engaging with the London tech community through meetups, career fairs, and industry conferences. Building meaningful connections with software engineers, data scientists, and tech entrepreneurs.</p>
-                    <p>Participating in tech talks and workshops focused on emerging technologies like AI, blockchain, and cloud computing. Attending career development sessions and interview preparation workshops.</p>
-                    <p>Volunteering at university tech events and mentoring junior students in programming and career guidance, while seeking mentorship from industry professionals to accelerate my own growth.</p>
-                `
+                   <p>To</p>
+                   <p>Be</p>
+                   <p>Added</p>
+               `
             }
         };
 
