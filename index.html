@@ -1,3 +1,4 @@
+<html>
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -122,7 +123,7 @@
       section {
       min-height: 80vh; /* Reduced from 100vh */
       padding: 60px 2rem 2rem; /* Reduced from 100px */
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -136,14 +137,16 @@
       .hero-container {
       display: flex;
       align-items: center;
-      gap: 4rem;
+      gap: 6rem;
       flex-wrap: wrap;
       width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
       }
       /* Profile Image */
       .profile-image {
-      width: 400px;
-      height: 400px;
+      width: 450px;
+      height: 450px;
       border-radius: 50%;
       background: linear-gradient(135deg, #c47dff 20%, #00d4aa 80%);
       padding: 8px;
@@ -187,7 +190,8 @@
       /* Hero Text */
       .hero-text {
       flex: 1;
-      min-width: 400px;
+      min-width: 500px;
+      max-width: 700px;
       }
       .greeting {
       font-size: 3rem;
@@ -365,7 +369,7 @@
       }
       /* Other Sections */
       .section-content {
-      max-width: 800px;
+      max-width: 1000px;
       text-align: center;
       }
       .section-title {
@@ -382,23 +386,105 @@
       color: #cccccc;
       margin-bottom: 2rem;
       }
+      /* Portfolio Tabs */
+      .portfolio-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+      }
+
+      .portfolio-tab {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #cccccc;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      backdrop-filter: blur(10px);
+      }
+
+      .portfolio-tab:hover {
+      background: rgba(0, 212, 170, 0.1);
+      border-color: rgba(0, 212, 170, 0.3);
+      color: #00d4aa;
+      transform: translateY(-2px);
+      }
+
+      .portfolio-tab.active {
+      background: linear-gradient(135deg, rgba(196, 125, 255, 0.2) 0%, rgba(0, 212, 170, 0.2) 100%);
+      border-color: #00d4aa;
+      color: #00d4aa;
+      box-shadow: 0 5px 15px rgba(0, 212, 170, 0.3);
+      }
+
+      .content-section {
+      animation: fadeInUp 0.6s ease forwards;
+      }
+
       .cards-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
       margin-top: 3rem;
       }
+
+      /* Larger screens - 3 cards per row */
+      @media (min-width: 1024px) {
+      .cards-container {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 1200px;
+      margin: 3rem auto 0;
+      }
+      }
      .card {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 15px;
-  padding: 2rem;
+  padding: 0;
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 200px; /* Ensure consistent card height */
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+  flex-shrink: 0;
+}
+
+.card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-tag {
+  background: rgba(0, 212, 170, 0.2);
+  color: #00d4aa;
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(0, 212, 170, 0.3);
 }
 
 .card:hover {
@@ -409,15 +495,18 @@
 }
 
 .card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
   color: #00d4aa;
+  font-weight: 600;
 }
 
 .card p {
   color: #cccccc;
   line-height: 1.6;
-  flex-grow: 1; /* This pushes the learn more to the bottom */
+  flex-grow: 1;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
 }
 
 /* Learn More styling */
@@ -425,15 +514,19 @@
   color: #00d4aa;
   font-size: 0.9rem;
   font-weight: 600;
-  margin-top: 1rem;
-  text-align: left; /* Changed from center to left */
+  text-align: center;
   opacity: 0.8;
   transition: all 0.3s ease;
-  align-self: flex-start; /* Align to the left */
+  padding: 0.6rem 1.2rem;
+  background: rgba(0, 212, 170, 0.1);
+  border: 1px solid rgba(0, 212, 170, 0.3);
+  border-radius: 8px;
+  margin-top: auto;
 }
 
 .card:hover .learn-more {
   opacity: 1;
+  background: rgba(0, 212, 170, 0.2);
   transform: translateY(-2px);
 }
 
@@ -479,6 +572,26 @@
       border: 1px solid rgba(0, 212, 170, 0.3);
       transform: scale(0.8) translateY(50px);
       transition: all 0.3s ease;
+      scrollbar-width: thin;
+      scrollbar-color: #00d4aa rgba(255, 255, 255, 0.1);
+      }
+
+      .modal-content::-webkit-scrollbar {
+      width: 8px;
+      }
+
+      .modal-content::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      }
+
+      .modal-content::-webkit-scrollbar-thumb {
+      background: #00d4aa;
+      border-radius: 4px;
+      }
+
+      .modal-content::-webkit-scrollbar-thumb:hover {
+      background: #00b899;
       }
       .modal-overlay.active .modal-content {
       transform: scale(1) translateY(0);
@@ -513,6 +626,16 @@
       }
       .modal-body {
       padding: 2rem;
+      padding-bottom: 3rem;
+      }
+
+      .modal-body p {
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      }
+
+      .modal-body p:last-child {
+      margin-bottom: 0;
       }
       .modal-title {
       font-size: 2rem;
@@ -570,7 +693,7 @@
       left: 0;
       width: 100%;
       height: 100vh;
-      background: rgba(26, 26, 26, 0.98);
+      background: linear-gradient(135deg, rgba(10, 26, 10, 0.98) 0%, rgba(26, 10, 26, 0.98) 100%);
       backdrop-filter: blur(10px);
       flex-direction: column;
       justify-content: center;
@@ -585,6 +708,21 @@
       .nav-item {
       font-size: 1.5rem;
       padding: 1rem 2rem;
+      }
+      .portfolio-tabs {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      }
+      .portfolio-tab {
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
+      padding: 0.8rem 1.5rem;
+      font-size: 0.95rem;
+      }
+      #home {
+      padding-top: 100px; /* Slightly less on mobile */
       }
       .hero-container {
       flex-direction: column;
@@ -625,10 +763,50 @@
       gap: 1.5rem;
       }
       .card {
-      padding: 1.5rem;
+      flex-direction: column;
+      min-height: 350px;
+      }
+      .card-image {
+      width: 100%;
+      height: 180px;
+      border-radius: 15px 15px 0 0;
+      }
+      .card-content {
+      width: 100%;
       }
       section {
       padding: 80px 1rem 2rem;
+      }
+      .tags-container {
+      gap: 0.6rem; /* Smaller gap on mobile */
+      padding: 0.5rem; /* Less padding on mobile */
+      }
+      .tag {
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      }
+      .learn-more {
+      color: #00d4aa;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-top: 1rem;
+      text-align: center;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+      }
+
+      .card:hover .learn-more {
+      opacity: 1;
+      transform: translateY(-2px);
+      }
+
+      .learn-more::after {
+      content: ' →';
+      transition: transform 0.3s ease;
+      }
+
+      .card:hover .learn-more::after {
+      transform: translateX(3px);
       }
       }
       @media (max-width: 480px) {
@@ -700,7 +878,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at 50% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%);
+      background: linear-gradient(135deg, #0a1a0a 0%, #1a0a1a 100%);
       pointer-events: none;
       z-index: -1;
       }
@@ -787,7 +965,7 @@
       flex-wrap: wrap;
       gap: 0.8rem; /* Increased gap between tags */
       justify-content: center;
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 1rem; /* Added padding around container */
       }
@@ -805,7 +983,7 @@
       left: 0;
       width: 100%;
       height: 100vh;
-      background: rgba(26, 26, 26, 0.98);
+      background: linear-gradient(135deg, rgba(10, 26, 10, 0.98) 0%, rgba(26, 10, 26, 0.98) 100%);
       backdrop-filter: blur(10px);
       flex-direction: column;
       justify-content: center;
@@ -820,6 +998,18 @@
       .nav-item {
       font-size: 1.5rem;
       padding: 1rem 2rem;
+      }
+      .portfolio-tabs {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      }
+      .portfolio-tab {
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
+      padding: 0.8rem 1.5rem;
+      font-size: 0.95rem;
       }
       #home {
       padding-top: 100px; /* Slightly less on mobile */
@@ -863,7 +1053,16 @@
       gap: 1.5rem;
       }
       .card {
-      padding: 1.5rem;
+      flex-direction: column;
+      min-height: 350px;
+      }
+      .card-image {
+      width: 100%;
+      height: 180px;
+      border-radius: 15px 15px 0 0;
+      }
+      .card-content {
+      width: 100%;
       }
       section {
       padding: 80px 1rem 2rem;
@@ -890,12 +1089,12 @@
       opacity: 1;
       transform: translateY(-2px);
       }
-   
+
       .learn-more::after {
       content: ' →';
       transition: transform 0.3s ease;
       }
-   
+
       .card:hover .learn-more::after {
       transform: translateX(3px);
       }
@@ -910,11 +1109,19 @@
             <span></span>
             <span></span>
          </div>
+         <span style="
+            background: linear-gradient(135deg, #c47dff 20%, #00d4aa 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+            font-size: large;
+            margin-right: auto;
+            ">Imran Ahmed Kamal</span>
          <div class="nav-menu">
             <a href="#home" class="nav-item active">Home</a>
             <a href="#about" class="nav-item">About Me</a>
-            <a href="#activities" class="nav-item">Recent Activities</a>
-            <a href="#projects" class="nav-item">Recent Projects</a>
+            <a href="#portfolio" class="nav-item">Portfolio</a>
          </div>
       </div>
    </nav>
@@ -960,9 +1167,7 @@
       <div class="section-content">
       <h2 class="section-title">About Me</h2>
       <p class="section-text">
-         I'm a passionate Computer Science student with a deep interest in data science and artificial intelligence. 
-         Currently in my final year at City, University of London, I'm constantly exploring new technologies and 
-         pushing the boundaries of what's possible with code.
+         I'm a passionate Computer Science student with a deep interest in data science and artificial intelligence. Currently in my final year at City, University of London, I'm constantly exploring new technologies and pushing the boundaries of what's possible with code. In my spare time, I enjoy creating code to automate tasks and build tools that enhance user experiences because I believe technology should empower people, not complicate their lives. With technology evolving at a quicker pace than ever before, now is the perfect time to help shape how these powerful tools integrate seamlessly into everyday life.
       </p>
       <div class="tags-section">
          <div class="tags-container">
@@ -997,66 +1202,129 @@
                      </div>
       </div>
    </section>
-   <section id="activities">
-      <div class="section-content">
-         <h2 class="section-title">Recent Activities</h2>
+   <section id="portfolio">
+   <div class="section-content">
+      <h2 class="section-title">Portfolio</h2>
+      <div style="display: flex; justify-content: center;">
+         <div class="portfolio-tabs">
+            <button class="portfolio-tab active" onclick="showContent('activities')">Recent Activities</button>
+            <button class="portfolio-tab" onclick="showContent('projects')">Recent Projects</button>
+         </div>
+      </div>
+      <div id="activities-content" class="content-section">
          <p class="section-text">
             Here are some of my recent academic and professional activities that showcase my journey in computer science.
          </p>
          <div class="cards-container">
             <div class="card" data-modal="academic-projects">
-            <h3>📚 Academic Projects</h3>
-            <p>Working on my final year dissertation focusing on machine learning applications in data analysis. Participating in advanced coursework in AI and distributed systems.</p>
-            <div class="learn-more">Learn More</div>
-         </div>
-         
-         <div class="card" data-modal="competitions">
-            <h3>🏆 Competitions</h3>
-            <p>Participating in coding competitions and hackathons. Recently competed in university-level programming contests and tech challenges.</p>
-            <div class="learn-more">Learn More</div>
-         </div>
-         
-         <div class="card" data-modal="networking">
-            <h3>🤝 Networking</h3>
-            <p>Attending tech meetups and career fairs in London. Building connections with industry professionals and fellow students in the tech community.</p>
-            <div class="learn-more">Learn More</div>
-         </div>
+               <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&h=300&fit=crop" alt="Academic Projects" class="card-image">
+               <div class="card-content">
+                  <div class="card-tags">
+                     <span class="card-tag">Machine Learning</span>
+                     <span class="card-tag">Research</span>
+                     <span class="card-tag">AI</span>
+                     <span class="card-tag">Data Analysis</span>
+                  </div>
+                  <h3>📚 Academic Projects</h3>
+                  <p>Working on my final year dissertation focusing on machine learning applications in data analysis. Participating in advanced coursework in AI and distributed systems.</p>
+                  <div class="learn-more">Learn More</div>
+               </div>
+            </div>
+            <div class="card" data-modal="competitions">
+               <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=300&fit=crop" alt="Programming Competitions" class="card-image">
+               <div class="card-content">
+                  <div class="card-tags">
+                     <span class="card-tag">Algorithms</span>
+                     <span class="card-tag">Problem Solving</span>
+                     <span class="card-tag">C++</span>
+                     <span class="card-tag">Hackathons</span>
+                  </div>
+                  <h3>🏆 Competitions</h3>
+                  <p>Participating in coding competitions and hackathons. Recently competed in university-level programming contests and tech challenges.</p>
+                  <div class="learn-more">Learn More</div>
+               </div>
+            </div>
+            <div class="card" data-modal="networking">
+               <img src="https://images.unsplash.com/photo-1515169067868-5387ec356754?w=800&h=300&fit=crop" alt="Professional Networking" class="card-image">
+               <div class="card-content">
+                  <div class="card-tags">
+                     <span class="card-tag">Career Development</span>
+                     <span class="card-tag">Mentorship</span>
+                     <span class="card-tag">Industry Events</span>
+                     <span class="card-tag">Communication</span>
+                  </div>
+                  <h3>🤝 Networking</h3>
+                  <p>Attending tech meetups and career fairs in London. Building connections with industry professionals and fellow students in the tech community.</p>
+                  <div class="learn-more">Learn More</div>
+               </div>
+            </div>
          </div>
       </div>
-   </section>
-   <section id="projects">
-      <div class="section-content">
-         <h2 class="section-title">Recent Projects</h2>
+      <div id="projects-content" class="content-section" style="display: none;">
          <p class="section-text">
             A collection of projects that demonstrate my technical skills and passion for creating meaningful solutions.
          </p>
          <div class="cards-container">
             <div class="card" data-modal="ai-tool">
-            <h3>🤖 AI Data Analysis Tool</h3>
-            <p>Built a comprehensive data analysis platform using Python...</p>
-            <div class="learn-more">Learn More</div>
-         </div>
-         
-         <div class="card" data-modal="web-app">
-            <h3>🌐 Web Application</h3>
-            <p>Developed a full-stack web application using React and Node.js...</p>
-            <div class="learn-more">Learn More</div>
-         </div>
-         
-         <div class="card" data-modal="dashboard">
-            <h3>📊 Data Visualization Dashboard</h3>
-            <p>Created an interactive dashboard for complex data visualization...</p>
-            <div class="learn-more">Learn More</div>
-         </div>
-         
-         <div class="card" data-modal="open-source">
-            <h3>🔧 Open Source Contributions</h3>
-            <p>Contributing to various open-source projects on GitHub...</p>
-            <div class="learn-more">Learn More</div>
-         </div>
+               <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=300&fit=crop" alt="AI Data Analysis Tool" class="card-image">
+               <div class="card-content">
+                  <div class="card-tags">
+                     <span class="card-tag">Python</span>
+                     <span class="card-tag">Machine Learning</span>
+                     <span class="card-tag">Data Science</span>
+                     <span class="card-tag">Pandas</span>
+                  </div>
+                  <h3>🤖 AI Data Analysis Tool</h3>
+                  <p>Built a comprehensive data analysis platform using Python and machine learning libraries. Features automated data preprocessing, statistical analysis, and interactive visualizations.</p>
+                  <div class="learn-more">Learn More</div>
+               </div>
+            </div>
+            <div class="card" data-modal="web-app">
+               <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=300&fit=crop" alt="Web Application" class="card-image">
+               <div class="card-content">
+                  <div class="card-tags">
+                     <span class="card-tag">React</span>
+                     <span class="card-tag">Node.js</span>
+                     <span class="card-tag">Full-Stack</span>
+                     <span class="card-tag">MongoDB</span>
+                  </div>
+                  <h3>🌐 Web Application</h3>
+                  <p>Developed a full-stack web application using React and Node.js with modern development practices. Features include user authentication, real-time messaging, and responsive design.</p>
+                  <div class="learn-more">Learn More</div>
+               </div>
+            </div>
+            <div class="card" data-modal="dashboard">
+               <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=300&fit=crop" alt="Data Visualization Dashboard" class="card-image">
+               <div class="card-content">
+                  <div class="card-tags">
+                     <span class="card-tag">D3.js</span>
+                     <span class="card-tag">Visualization</span>
+                     <span class="card-tag">JavaScript</span>
+                     <span class="card-tag">Charts</span>
+                  </div>
+                  <h3>📊 Data Visualization Dashboard</h3>
+                  <p>Created an interactive dashboard for complex data visualization using D3.js and modern web technologies. Transforms raw data into engaging visual stories.</p>
+                  <div class="learn-more">Learn More</div>
+               </div>
+            </div>
+            <div class="card" data-modal="open-source">
+               <img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=800&h=300&fit=crop" alt="Open Source Contributions" class="card-image">
+               <div class="card-content">
+                  <div class="card-tags">
+                     <span class="card-tag">Git</span>
+                     <span class="card-tag">GitHub</span>
+                     <span class="card-tag">Open Source</span>
+                     <span class="card-tag">Collaboration</span>
+                  </div>
+                  <h3>🔧 Open Source Contributions</h3>
+                  <p>Contributing to various open-source projects on GitHub across multiple domains including web development, data science, and developer tools.</p>
+                  <div class="learn-more">Learn More</div>
+               </div>
+            </div>
          </div>
       </div>
-   </section>
+   </div>
+</section>
    <div class="modal-overlay" id="modalOverlay">
       <div class="modal-content">
          <button class="modal-close" id="modalClose">&times;</button>
@@ -1076,12 +1344,12 @@
       document.querySelectorAll('.nav-item').forEach(item => {
       item.addEventListener('click', function(e) {
       e.preventDefault();
-      
+
       // Remove active class from all items
       document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
       // Add active class to clicked item
       this.classList.add('active');
-      
+
       // Smooth scroll to section
       const targetId = this.getAttribute('href').substring(1);
       const targetSection = document.getElementById(targetId);
@@ -1093,13 +1361,13 @@
       }
       });
       });
-      
+
       // Update active nav item on scroll
       window.addEventListener('scroll', function() {
       const sections = document.querySelectorAll('section');
       const navItems = document.querySelectorAll('.nav-item');
       let current = '';
-      
+
       sections.forEach(section => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.clientHeight;
@@ -1107,7 +1375,7 @@
       current = section.getAttribute('id');
       }
       });
-      
+
       navItems.forEach(item => {
       item.classList.remove('active');
       if (item.getAttribute('href') === `#${current}`) {
@@ -1115,16 +1383,16 @@
       }
       });
       });
-      
+
       // Mobile menu toggle
       const mobileToggle = document.querySelector('.mobile-menu-toggle');
       const navMenu = document.querySelector('.nav-menu');
-      
+
       mobileToggle.addEventListener('click', function() {
       this.classList.toggle('active');
       navMenu.classList.toggle('mobile-open');
       });
-      
+
       // Close mobile menu when clicking nav items
       document.querySelectorAll('.nav-item').forEach(item => {
       item.addEventListener('click', function() {
@@ -1132,7 +1400,7 @@
       navMenu.classList.remove('mobile-open');
       });
       });
-      
+
       // Close mobile menu when clicking outside
       document.addEventListener('click', function(e) {
       if (!mobileToggle.contains(e.target) && !navMenu.contains(e.target)) {
@@ -1140,7 +1408,7 @@
       navMenu.classList.remove('mobile-open');
       }
       });
-      
+
       // Download CV function
       function downloadCV() {
       const cvUrl = 'documents/Imran Ahmed Kamal CV.pdf';
@@ -1151,7 +1419,7 @@
       link.click();
       document.body.removeChild(link);
       }
-      
+
       // Hide scroll indicator when scrolling
       window.addEventListener('scroll', function() {
       const scrollIndicator = document.querySelector('.scroll-indicator');
@@ -1165,7 +1433,7 @@
       }
       }
       });
-      
+
         const modalData = {
             'ai-tool': {
                 image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=300&fit=crop',
@@ -1192,7 +1460,7 @@
                 title: 'Data Visualization Dashboard',
                 tech: ['D3.js', 'Python', 'Flask', 'JavaScript', 'Chart.js'],
                 content: `
-                    <p>Created an interactive dashboard that transforms complex datasets into intuitive and engaging visual representations.</p>
+                    <p                    Created an interactive dashboard that transforms complex datasets into intuitive and engaging visual representations.</p>
                     <p>The dashboard supports multiple data formats and provides various visualization options including line charts, bar graphs, heat maps, and custom interactive plots. Users can filter data, zoom into specific time ranges, and export visualizations.</p>
                     <p>Implemented real-time data updates and collaborative features allowing multiple users to share insights and annotations on the same dashboard.</p>
                 `
@@ -1215,6 +1483,7 @@
                     <p>Currently working on my final year dissertation focusing on machine learning applications in predictive data analysis, exploring novel approaches to improve accuracy and efficiency.</p>
                     <p>Completed advanced coursework in Artificial Intelligence, including neural networks, natural language processing, and computer vision. Participated in distributed systems projects involving cloud computing and microservices architecture.</p>
                     <p>Collaborated on group projects developing intelligent systems for real-world applications, including recommendation engines and automated decision-making tools.</p>
+
                 `
             },
             'competitions': {
@@ -1238,18 +1507,27 @@
                 `
             }
         };
-      
-        
-      
+
+      // Function to switch content
+      function showContent(contentType) {
+         document.querySelectorAll('.portfolio-tab').forEach(tab => tab.classList.remove('active'));
+         document.querySelector(`.portfolio-tab[onclick="showContent('${contentType}')"]`).classList.add('active');
+
+         document.getElementById('activities-content').style.display = 'none';
+         document.getElementById('projects-content').style.display = 'none';
+
+         document.getElementById(`${contentType}-content`).style.display = 'block';
+      }
+
       // Function to open modal
       function openModal(modalId) {
           const data = modalData[modalId];
-          
+
           if (data) {
               document.getElementById('modalImage').src = data.image;
               document.getElementById('modalTitle').textContent = data.title;
               document.getElementById('modalText').innerHTML = data.content;
-              
+
               // Add tech stack tags
               const techContainer = document.getElementById('modalTechStack');
               techContainer.innerHTML = '';
@@ -1259,18 +1537,18 @@
                   tag.textContent = tech;
                   techContainer.appendChild(tag);
               });
-              
+
               document.getElementById('modalOverlay').classList.add('active');
               document.body.classList.add('modal-open');
           }
       }
-      
+
       // Function to close modal
       function closeModal() {
           document.getElementById('modalOverlay').classList.remove('active');
           document.body.classList.remove('modal-open');
       }
-      
+
       // Wait for DOM to be fully loaded
       document.addEventListener('DOMContentLoaded', function() {
           // Add click event listeners to modal cards
@@ -1281,15 +1559,15 @@
                   openModal(modalId);
               });
           });
-      
+
           // Close modal event listeners
           const modalClose = document.getElementById('modalClose');
           const modalOverlay = document.getElementById('modalOverlay');
-          
+
           if (modalClose) {
               modalClose.addEventListener('click', closeModal);
           }
-          
+
           if (modalOverlay) {
               modalOverlay.addEventListener('click', function(e) {
                   if (e.target === this) {
@@ -1297,7 +1575,7 @@
                   }
               });
           }
-      
+
           // Close modal with Escape key
           document.addEventListener('keydown', function(e) {
               if (e.key === 'Escape') {
