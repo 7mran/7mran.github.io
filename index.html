@@ -631,6 +631,27 @@
       .modal-body p:last-child {
       margin-bottom: 0;
       }
+
+      .modal-image-container {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 1.5rem;
+      border-radius: 10px;
+      overflow: hidden;
+      }
+
+      .modal-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      }
+
+      /* Hide modal images on mobile */
+      @media (max-width: 768px) {
+      .modal-image-container {
+      display: none;
+      }
+      }
       .modal-title {
       font-size: 2rem;
       color: #00d4aa;
@@ -1299,6 +1320,7 @@
       <div class="modal-content">
          <button class="modal-close" id="modalClose">&times;</button>
          <div class="modal-body">
+            <div class="modal-image-container" id="modalImageContainer"></div>
             <h2 class="modal-title" id="modalTitle"></h2>
             <div class="modal-tech-stack" id="modalTechStack"></div>
             <div class="modal-text" id="modalText"></div>
@@ -1486,6 +1508,16 @@
           if (data) {
               document.getElementById('modalTitle').textContent = data.title;
               document.getElementById('modalText').innerHTML = data.content;
+
+              // Add modal image
+              const imageContainer = document.getElementById('modalImageContainer');
+              imageContainer.innerHTML = '';
+              if (data.image) {
+                  const img = document.createElement('img');
+                  img.src = data.image;
+                  img.alt = data.title;
+                  imageContainer.appendChild(img);
+              }
 
               // Add tech stack tags
               const techContainer = document.getElementById('modalTechStack');
