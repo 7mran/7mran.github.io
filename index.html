@@ -618,6 +618,12 @@
       background: #ff4757;
       transform: scale(1.1);
       }
+      .modal-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 15px 15px 0 0;
+      }
       .modal-body {
       padding: 2rem;
       padding-bottom: 3rem;
@@ -630,27 +636,6 @@
 
       .modal-body p:last-child {
       margin-bottom: 0;
-      }
-
-      .modal-image-container {
-      width: 100%;
-      height: 200px;
-      margin-bottom: 1.5rem;
-      border-radius: 10px;
-      overflow: hidden;
-      }
-
-      .modal-image-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      }
-
-      /* Hide modal images on mobile */
-      @media (max-width: 768px) {
-      .modal-image-container {
-      display: none;
-      }
       }
       .modal-title {
       font-size: 2rem;
@@ -950,6 +935,11 @@
       /* Hide scroll indicator on mobile */
       @media (max-width: 768px) {
       .scroll-indicator {
+      display: none;
+      }
+      
+      /* Hide modal image on mobile */
+      .modal-image {
       display: none;
       }
       }
@@ -1319,8 +1309,8 @@
    <div class="modal-overlay" id="modalOverlay">
       <div class="modal-content">
          <button class="modal-close" id="modalClose">&times;</button>
+         <img class="modal-image" id="modalImage" src="" alt="">
          <div class="modal-body">
-            <div class="modal-image-container" id="modalImageContainer"></div>
             <h2 class="modal-title" id="modalTitle"></h2>
             <div class="modal-tech-stack" id="modalTechStack"></div>
             <div class="modal-text" id="modalText"></div>
@@ -1506,18 +1496,9 @@
           const data = modalData[modalId];
 
           if (data) {
+              document.getElementById('modalImage').src = data.image;
               document.getElementById('modalTitle').textContent = data.title;
               document.getElementById('modalText').innerHTML = data.content;
-
-              // Add modal image
-              const imageContainer = document.getElementById('modalImageContainer');
-              imageContainer.innerHTML = '';
-              if (data.image) {
-                  const img = document.createElement('img');
-                  img.src = data.image;
-                  img.alt = data.title;
-                  imageContainer.appendChild(img);
-              }
 
               // Add tech stack tags
               const techContainer = document.getElementById('modalTechStack');
