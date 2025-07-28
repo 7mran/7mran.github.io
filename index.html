@@ -660,6 +660,52 @@
       gap: 0.5rem;
       margin-bottom: 1.5rem;
       }
+      .modal-additional-images {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-additional-images h4 {
+    color: #00d4aa;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.additional-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.additional-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 212, 170, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.additional-image:hover {
+    border-color: #00d4aa;
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 212, 170, 0.3);
+}
+      /* Mobile responsive */
+@media (max-width: 768px) {
+    .additional-images-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .additional-image {
+        height: 200px;
+    }
+}
       .tech-tag {
       background: rgba(0, 212, 170, 0.2);
       color: #00d4aa;
@@ -1316,6 +1362,10 @@
             <h2 class="modal-title" id="modalTitle"></h2>
             <div class="modal-tech-stack" id="modalTechStack"></div>
             <div class="modal-text" id="modalText"></div>
+            <div class="modal-additional-images" id="modalAdditionalImages" style="display: none;">
+                <h4>Gallery</h4>
+                <div class="additional-images-grid" id="additionalImagesGrid"></div>
+            </div>
          </div>
       </div>
    </div>
@@ -1496,7 +1546,14 @@
                    <p>Furthermore, I gained valuable insights into the practical applications of Generative AI in the financial sector by looking at how NatWest is utilising this technology. NatWest recently announced a five-year collaboration with AWS and Accenture to accelerate their bank-wide data and AI transformation. They are strategically leveraging Generative AI to simplify complex operations, personalise customer services, and enhance critical areas like security and compliance. This aims to provide more intuitive and proactive experiences for their 20 million customers, with a focus on delivering benefits over the next twelve months. Their early adoption of GenAI in customer-facing tools, such as the AI virtual assistant 'Cora+', has already shown promising improvements in customer satisfaction and a reduction in the need for human intervention. This demonstrates a clear move towards a more technology and data-driven banking future.</p>
 
                    <p>Attending the AWS Summit truly broadened my understanding of the immense power and versatility of cloud computing and AI across diverse sectors. From enhancing fan engagement in sports to fortifying cybersecurity and revolutionising financial services, the applications of AWS technologies are boundless. It was a highly informative event that reinforced my enthusiasm for technology's transformative role in the modern world.</p>
-               `
+               `,
+               additionalImages: [
+            'images/IMG_7440.jpeg',
+            'images/IMG_7435.jpeg',
+            'images/IMG_7424.jpeg',
+            'images/IMG_7444.jpeg',
+            'images/IMG_7449.jpeg',
+        ]
             }
         };
 
@@ -1511,29 +1568,51 @@
          document.getElementById(`${contentType}-content`).style.display = 'block';
       }
 
-      // Function to open modal
       function openModal(modalId) {
-          const data = modalData[modalId];
-
-          if (data) {
-              document.getElementById('modalImage').src = data.image;
-              document.getElementById('modalTitle').textContent = data.title;
-              document.getElementById('modalText').innerHTML = data.content;
-
-              // Add tech stack tags
-              const techContainer = document.getElementById('modalTechStack');
-              techContainer.innerHTML = '';
-              data.tech.forEach(tech => {
-                  const tag = document.createElement('span');
-                  tag.className = 'tech-tag';
-                  tag.textContent = tech;
-                  techContainer.appendChild(tag);
-              });
-
-              document.getElementById('modalOverlay').classList.add('active');
-              document.body.classList.add('modal-open');
-          }
-      }
+    const data = modalData[modalId];
+    if (data) {
+        document.getElementById('modalImage').src = data.image;
+        document.getElementById('modalTitle').textContent = data.title;
+        document.getElementById('modalText').innerHTML = data.content;
+        
+        // Add tech stack tags
+        const techContainer = document.getElementById('modalTechStack');
+        techContainer.innerHTML = '';
+        data.tech.forEach(tech => {
+            const tag = document.createElement('span');
+            tag.className = 'tech-tag';
+            tag.textContent = tech;
+            techContainer.appendChild(tag);
+        });
+        
+        // NEW: Handle additional images
+        const additionalImagesContainer = document.getElementById('modalAdditionalImages');
+        const additionalImagesGrid = document.getElementById('additionalImagesGrid');
+        
+        if (data.additionalImages && data.additionalImages.length > 0) {
+            // Clear previous images
+            additionalImagesGrid.innerHTML = '';
+            
+            // Add each additional image
+            data.additionalImages.forEach(imageSrc => {
+                const img = document.createElement('img');
+                img.src = imageSrc;
+                img.className = 'additional-image';
+                img.alt = `${data.title} - Gallery Image`;
+                
+                additionalImagesGrid.appendChild(img);
+            });
+            
+            // Show the additional images section
+            additionalImagesContainer.style.display = 'block';
+        } else {
+            // Hide the additional images section if no images
+            additionalImagesContainer.style.display = 'none';
+        }
+        
+        document.getElementById('modalOverlay').classList.add('active');
+        document.body.classList.add('modal-open');
+    }
 
       // Function to close modal
       function closeModal() {
