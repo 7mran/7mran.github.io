@@ -1566,9 +1566,39 @@
                 title: 'E-Commerce Price Tracker',
                 tech: ['Python', 'Web Scraping', 'Excel'],
                 content: `
-                    <p>To</p>
-                    <p>Be</p>
-                    <p>Added</p>
+                     <h2>Project Overview</h2>
+                     <p>The Amazon Price Monitor is a Python-based automated web scraping solution designed to track product prices on Amazon UK. This tool addresses the common problem of missing out on discounts and price drops by providing continuous monitoring and instant notifications when price changes occur.</p>
+                     
+                     <h2>Problem Statement</h2>
+                     <p>The project was developed to solve a specific issue: missing out on Amazon discounts due to timing. Many consumers, including the intended user, frequently discover sales only after items have gone out of stock. This monitoring system ensures users never miss another discount opportunity.</p>
+                     
+                     <h2>Key Features</h2>
+                     <p><strong>Automated Price Tracking:</strong> The system continuously monitors specified Amazon UK product URLs at regular 5-minute intervals, automatically extracting current pricing information.</p>
+                     <p><strong>Data Persistence:</strong> All price data is systematically logged to a CSV file (priceMonitorDataFeed.csv) with timestamps, creating a comprehensive historical record of price fluctuations for analysis and trend identification.</p>
+                     <p><strong>Smart Change Detection:</strong> The application compares current prices against previous entries to identify genuine price changes, preventing unnecessary notifications for static pricing.</p>
+                     <p><strong>Email Notification System:</strong> When price changes are detected, the system automatically sends detailed email alerts containing the product name, old price, new price, and direct product URL for immediate action.</p>
+                     <p><strong>Robust Error Handling:</strong> The tool includes comprehensive exception handling to manage network connectivity issues, website accessibility problems, and HTML structure changes without crashing.</p>
+                     
+                     <h2>Technical Implementation</h2>
+                     <p><strong>Web Scraping Technology:</strong> Utilizes BeautifulSoup for HTML parsing combined with the requests library for web content retrieval, employing proper user-agent headers to ensure reliable access.</p>
+                     <p><strong>Data Processing:</strong> Implements pandas for efficient data manipulation and comparison operations, enabling quick identification of price changes within the historical dataset.</p>
+                     <p><strong>Email Integration:</strong> Features SMTP integration with Gmail for reliable email delivery, supporting secure authentication through app-specific passwords.</p>
+                     <p><strong>Scheduling System:</strong> Runs continuously with configurable time intervals, currently set to check prices every 300 seconds to balance monitoring frequency with respectful server usage.</p>
+                     
+                     <h2>Technical Architecture</h2>
+                     <p>The solution follows a modular design with distinct functions for price checking, data logging, and notification handling. The main execution loop ensures continuous operation while maintaining system stability through proper exception management.</p>
+                     <p><strong>Core Components:</strong></p>
+                     <p>• Price extraction and validation using regular expressions</p>
+                     <p>• CSV file management with automatic header creation</p>
+                     <p>• Historical data comparison using pandas DataFrames</p>
+                     <p>• SMTP email delivery system with customizable recipients</p>
+                     
+                     <h2>Project Impact</h2>
+                     <p>This automated monitoring system transforms passive price watching into an active notification service. Users can now track multiple products simultaneously without manual checking, ensuring they're immediately informed of price drops or increases. The historical data collection also enables trend analysis for informed purchasing decisions.</p>
+                     <p>The solution demonstrates practical application of web scraping technologies, data processing techniques, and automated notification systems, showcasing how Python can be leveraged to solve real-world consumer problems through automation.</p>
+                     <h2>Future Enhancements</h2>
+                     
+                     <p>Potential improvements could implementing a GUI, integration with price prediction algorithms, mobile app notifications, and expanded retailer coverage beyond Amazon.</p>
                 `
             },
             'SQL': {
