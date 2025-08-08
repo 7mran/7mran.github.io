@@ -1700,58 +1700,38 @@
                 title: 'Sports Club Database Design',
                 tech: ['SQL', 'Databases', 'Normalisation', 'Relational Database'],
                 content: `
-                    <h2>Project Overview</h2>
+                   <h2>Project Overview</h2>
                    <p>This project implements a comprehensive database system for a sports club that manages member certifications across various sports disciplines. The system efficiently handles the relationships between members, instructors, sports programs, and assessment records through a well-structured relational design.</p>
                
                    <h2>System Architecture</h2>
                    <p>The database centers around four core entities: Members, Instructors, Sports, and Certifications. The design uses proper normalisation principles with foreign key relationships to maintain data integrity. The Certification table serves as the central hub, linking members with instructors for specific sports assessments using a composite primary key structure. This approach allows for flexible scenarios where members can be assessed by different instructors for the same sport, supporting real-world business requirements like retakes or instructor changes</p>
                
                    <h2>Technical Implementation</h2>
-                   <p>The system demonstrates a range of SQL capabilities, from basic data retrieval to complex multi-table analysis. Key technical features include:</p>
-               
-                   <p><strong>Query Complexity:</strong> Progressive query development from simple filtering to advanced operations using EXISTS clauses, LEFT JOINs, and aggregate functions with GROUP BY.</p>
-               
-                   <p><strong>Data Relationships:</strong> Multi-table joins that extract meaningful business insights, such as member certification counts, instructor workloads, and assessment patterns.</p>
-               
-                   <p><strong>Data Integrity:</strong> Proper constraint implementation with foreign keys ensuring referential integrity across all operations.</p>
-               
+                   <p>The system demonstrates a range of SQL capabilities, from basic data retrieval to complex multi-table analysis. Key technical features include:</p>              
+                   <p><strong>Query Complexity:</strong> Progressive query development from simple filtering to advanced operations using EXISTS clauses, LEFT JOINs, and aggregate functions with GROUP BY.</p>              
+                   <p><strong>Data Relationships:</strong> Multi-table joins that extract meaningful business insights, such as member certification counts, instructor workloads, and assessment patterns.</p>              
+                   <p><strong>Data Integrity:</strong> Proper constraint implementation with foreign keys ensuring referential integrity across all operations.</p>              
                    <p><strong>Business Intelligence:</strong> Queries designed to answer real business questions about member progress, popular programs, and seasonal assessment trends.</p>
                
                    <h2>Business Value</h2>
-                   <p>The system addresses practical sports club management challenges by providing structured data storage and detailed reporting capabilities. It supports various analytical requirements from basic member lookups to complex performance metrics.</p>
-               
+                   <p>The system addresses practical sports club management challenges by providing structured data storage and detailed reporting capabilities. It supports various analytical requirements from basic member lookups to complex performance metrics.</p>               
                    <p>The design accommodates growth and changing business needs while maintaining data consistency through proper database design principles.</p>
                
                    <h2>Key Achievements</h2>
-                   <p><strong>Normalized Database Design:</strong> Clean entity separation with proper relationships</p>
-               
-                   <p><strong>Complex Query Implementation:</strong> Advanced SQL techniques including subqueries and multiple join operations for data analysis</p>
-               
-                   <p><strong>Data Integrity:</strong> Comprehensive constraint system preventing invalid data states</p>
-               
+                   <p><strong>Normalized Database Design:</strong> Clean entity separation with proper relationships</p>               
+                   <p><strong>Complex Query Implementation:</strong> Advanced SQL techniques including subqueries and multiple join operations for data analysis</p>               
+                   <p><strong>Data Integrity:</strong> Comprehensive constraint system preventing invalid data states</p>              
                    <p><strong>Scalable Architecture:</strong> Design supports business growth and evolving requirements</p>
                
-                   <h2>Technologies Used</h2>
-                   <p><strong>SQL:</strong> Database design, complex queries, and data manipulation</p>
-               
-                   <p><strong>Relational Database Design:</strong> Entity modeling and normalization</p>
-               
-                   <p><strong>Data Analysis:</strong> Aggregate functions and business intelligence queries</p>
-               
                    <h2>Future Enhancements</h2>
-                   <p>Moving forward, this foundation could support several valuable additions:</p>
-               
-                   <p><strong>Automated Reporting:</strong> Scheduled reports for membership statistics, instructor performance metrics, and financial summaries would provide regular business insights.</p>
-               
-                   <p><strong>Mobile Accessibility:</strong> A mobile app could allow instructors to record assessments directly and members to track their certification progress.</p>
-               
+                   <p>Moving forward, this foundation could support several valuable additions:</p>               
+                   <p><strong>Automated Reporting:</strong> Scheduled reports for membership statistics, instructor performance metrics, and financial summaries would provide regular business insights.</p>               
+                   <p><strong>Mobile Accessibility:</strong> A mobile app could allow instructors to record assessments directly and members to track their certification progress.</p>               
                    <p><strong>Advanced Analytics:</strong> Data visualization tools could transform the raw query results into interactive charts and dashboards for better decision-making.</p>
-               
                    <p><strong>API Development:</strong> RESTful APIs could enable integration with other club management systems or third-party applications.</p>
                
                    <h2>Conclusion</h2>
                    <p>This Sports Club Database Management System demonstrates the practical application of database design principles to solve real business problems. The project showcases technical proficiency in SQL and database architecture while addressing genuine operational needs in sports club management.</p>
-               
                    <p>The system provides a solid foundation that balances current functionality with future extensibility, making it a valuable tool for modern sports club operations.</p>
                
                    <hr>
