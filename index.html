@@ -1371,7 +1371,8 @@
                      <span class="card-tag">Python</span>
                      <span class="card-tag">Data Science</span>
                   </div>
-                  <h3>🏎️ Formula One 2024 Championship Season Explorer</h3>A Data-Driven Journey Through the Season: How I built an interactive Python application that analyzes real F1 telemetry data from all 24 races of 2024, processes lap-by-lap position tracking and championship standings, and generates comprehensive race visualizations, using context-driven learning with AI mentorship to do so./p>
+                  <h3>🏎️ Formula One 2024 Championship Season Explorer</h3>
+                  <p>My data-driven journey building an interactive Python application that analyzes real F1 telemetry data from all 24 races of 2024, processes lap-by-lap position tracking and championship standings, and generates comprehensive race visualizations, using context-driven learning with AI mentorship to do so.</p>
                   <div class="learn-more">Learn More</div>
                </div>
             </div>
@@ -1843,7 +1844,7 @@
                     <p>The F1 2024 Championship Season Explorer is an interactive desktop application that transforms the entire 2024 Formula 1 season into an explorable data experience. Users can select any of the 24 races from the season and dive deep into the story of that particular Grand Prix through real telemetry data, lap times, and championship standings.</p>
                     
                     <p>The application offers four key analysis perspectives:</p>
-                    <p>- Lap-by-lap position tracking that shows how drivers moved through the field during the race</p>
+                    <p>- Lap-by-lap position tracking that shows how drivers progressed throughout the race</p>
                     <p>- Championship impact analysis revealing points earned and performance changes</p>
                     <p>- Comprehensive performance dashboards displaying race context alongside championship standings</p>
                     <p>- Detailed results tables with timing data, sector splits, and race status information</p>
@@ -1858,7 +1859,7 @@
 
                     <h2>Technical Architecture and Data Analysis Capabilities</h2>
                     <p>The systematic learning approach naturally led to a well-structured application design. The core architecture consists of two main components that work in harmony to deliver the user experience.</p>
-                    <p><strong>F1ChampionshipStoryEngine - Data Analysis Core</strong></p>
+                    <h2>F1ChampionshipStoryEngine - Data Analysis Core</h2>
                     <p>The F1ChampionshipStoryEngine serves as the data analysis backbone, handling all FastF1 operations including session management, real-time data loading for all 24 races, multiple chart generation methods, and progressive championship standings tracking. This engine processes everything from lap-by-lap position changes to constructor performance analysis.</p>
                     <p>The data processing capabilities include:</p>
                     <p>- Progressive championship standings for both drivers and constructors after each race</p>
@@ -1866,17 +1867,17 @@
                     <p>- Memory-efficient caching strategies for telemetry data from 24 complete race weekends</p>
                     <p>- Best race lap and best sector identification</p>
                     
-                    <p><strong>F1RaceChapterNavigator - User Interface Layer</strong></p>
+                    <h2>F1RaceChapterNavigator - User Interface Layer</h2>
                     <p>The F1RaceChapterNavigator provides the user interface layer, featuring a scrollable race selection interface that presents all 24 races as interactive chapters. Users can dynamically select which drivers to analyze through team-colored checkboxes, view embedded matplotlib charts in separate windows, and receive clear status indicators during data loading operations. The interface also highlights championship-defining races like Lando Norris's breakthrough win in Miami and Max Verstappen's legendary Brazil drive from P17 to P1.</p>
 
-                    <p><strong>Advanced Visualization Capabilities</strong></p>
+                    <h2>Advanced Visualization Capabilities</h2>
                     <p>The application generates four distinct types of data visualizations:</p>
                     <p><strong>Position Progression Charts </strong>track each driver's position throughout the race, incorporating starting grid positions and handling retirements. The charts use team colors and distinct markers to differentiate drivers, with championship zones highlighted to show podium and points-paying positions.</p>
                     <p><strong>Championship Impact Analysis </strong>displays points earned in each race alongside grid vs final position comparisons, revealing which drivers gained or lost positions from their starting positions.</p>
                     <p><strong>Performance Dashboards </strong>combine multiple data perspectives in a single view: position progression, constructor championship standings after the selected race, position changes analysis, and driver championship standings for selected drivers.</p>
                     <p><strong>Detailed Results Tables </strong>provide comprehensive race data including gap calculations to the race leader, best lap times, sector analysis, average speeds, and race status information, with color-coding for podium finishers and points-scoring positions.</p>
                     
-                    <p><strong>Real-World Data Integration Challenges</strong></p>
+                    <h2>Real-World Data Integration Challenges</h2>
                     <p>Working with real Formula 1 data introduced complexities that no generic tutorial could have prepared me for. The FastF1 library provides access to actual telemetry data, but Formula 1 races are dynamic events where drivers retire mid-race, penalties are applied, and unusual circumstances create edge cases in the data.</p>
                     <p>The application handles varying session lengths, data inconsistencies, and the sheer volume of information generated by a single Grand Prix weekend. Memory management became a significant concern when dealing with telemetry data from 24 complete race weekends, leading to the implementation of intelligent caching strategies and on-demand data loading.</p>
                     <p>User experience considerations drove additional technical refinements. Data loading from the FastF1 API can take considerable time, especially for first-time requests. Implementing proper status indicators and error handling became essential to maintain a professional user experience.</p>
