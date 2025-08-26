@@ -1369,10 +1369,9 @@
                <div class="card-content">
                   <div class="card-tags">
                      <span class="card-tag">Python</span>
-                     <span class="card-tag">APIs</span>
+                     <span class="card-tag">Data Science</span>
                   </div>
-                  <h3>🏎️ Formula One Strategy Dashboard</h3>
-                  <p>**Currently in Development**<br>Developing a program that will help give Formula One fans an insight into the strategies that trackside engineers employ at different races.</p>
+                  <h3>🏎️ Formula One 2024 Championship Season Explorer</h3>A Data-Driven Journey Through the Season: How I built an interactive Python application that analyzes real F1 telemetry data from all 24 races of 2024, processes lap-by-lap position tracking and championship standings, and generates comprehensive race visualizations, using context-driven learning with AI mentorship to do so./p>
                   <div class="learn-more">Learn More</div>
                </div>
             </div>
@@ -1838,9 +1837,56 @@
             'F1': {
                 image: 'images/f12.png',
                 title: 'Formula One Strategy Dashboard',
-                tech: ['Python', 'APIs'],
+                tech: ['Python', 'Data Science', 'APIs', 'Tkinter', 'Pandas', 'Matplotlib'],
                 content: `
-                    <p>**Currently in Development**<br>Developing a program that will help give Formula One fans an insight into the strategies that trackside engineers employ at different races.</p>
+                    <h2>What is the F1 2024 Championship Season Explorer?</h2>
+                    <p>The F1 2024 Championship Season Explorer is an interactive desktop application that transforms the entire 2024 Formula 1 season into an explorable data experience. Users can select any of the 24 races from the season and dive deep into the story of that particular Grand Prix through real telemetry data, lap times, and championship standings.</p>
+                    
+                    <p>The application offers four key analysis perspectives:</p>
+                    <p>- Lap-by-lap position tracking that shows how drivers moved through the field during the race</p>
+                    <p>- Championship impact analysis revealing points earned and performance changes</p>
+                    <p>- Comprehensive performance dashboards displaying race context alongside championship standings</p>
+                    <p>- Detailed results tables with timing data, sector splits, and race status information</p>
+                    
+                    <p>What sets this apart from typical data visualization tools is its integration with real Formula 1 data through the FastF1 library. Every chart and statistic reflects actual race telemetry rather than simulated information. The interface presents all 24 races as selectable chapters, with special highlighting for championship-defining moments like Max Verstappen's legendary Brazil drive from 17th to 1st position. Users select which drivers to analyse from the full 2024 grid, then generate interactive charts that tell the story of each race through data.</p>
+                    
+                    <h2>The Traditional Learning Approach VS AI Mentorship</h2>
+                    <p>Like many aspiring developers, I initially turned to the usual suspects for learning Python data analysis: LinkedIn Learning courses and YouTube tutorials. However, I quickly discovered that these resources weren't suited to my learning style. I learn best by doing, by working through problems hands-on rather than passively watching someone else code. The generic datasets and abstract examples in these courses felt disconnected from anything I cared about, making it difficult to stay engaged and retain what I was learning.</p>
+                    <p>The breakthrough came when I realized I needed a more structured, personalized approach. I turned to Claude AI to create a custom learning pathway that would simulate the kind of classroom experience I had thrived in during secondary school and college. This wasn't about getting quick answers to coding problems, but about creating a systematic curriculum that would take me from complete beginner to building a sophisticated application.</p>
+                    <p>Working with ClaudeAI, I developed a lesson-by-lesson approach that followed a similar structure to that I had experienced in academia. Each lesson would start with a clear explanation of a core concept using simple, non-F1 examples to establish the fundamentals. Once I grasped the basic principle, Claude would then show me how to apply that same concept specifically to Formula 1 data analysis, connecting abstract programming concepts to something I was genuinely passionate about.</p>
+                    <p>This approach proved transformative. Instead of struggling through generic pandas tutorials about apple and banana sales, I was learning data manipulation through the lens of lap times, championship standings, and driver performance. The learning became immediately relevant and engaging because every technique I mastered brought me closer to building an incredible program with real world applications.</p>
+
+                    <h2>Technical Architecture and Data Analysis Capabilities</h2>
+                    <p>The systematic learning approach naturally led to a well-structured application design. The core architecture consists of two main components that work in harmony to deliver the user experience.</p>
+                    <p><strong>F1ChampionshipStoryEngine - Data Analysis Core</strong></p>
+                    <p>The F1ChampionshipStoryEngine serves as the data analysis backbone, handling all FastF1 operations including session management, real-time data loading for all 24 races, multiple chart generation methods, and progressive championship standings tracking. This engine processes everything from lap-by-lap position changes to constructor performance analysis.</p>
+                    <p>The data processing capabilities include:</p>
+                    <p>- Progressive championship standings for both drivers and constructors after each race</p>
+                    <p>- Intelligent handling of race retirements, penalties, and data inconsistencies</p>
+                    <p>- Memory-efficient caching strategies for telemetry data from 24 complete race weekends</p>
+                    <p>- Best race lap and best sector identification</p>
+                    
+                    <p><strong>F1RaceChapterNavigator - User Interface Layer</strong></p>
+                    <p>The F1RaceChapterNavigator provides the user interface layer, featuring a scrollable race selection interface that presents all 24 races as interactive chapters. Users can dynamically select which drivers to analyze through team-colored checkboxes, view embedded matplotlib charts in separate windows, and receive clear status indicators during data loading operations. The interface also highlights championship-defining races like Lando Norris's breakthrough win in Miami and Max Verstappen's legendary Brazil drive from P17 to P1.</p>
+
+                    <p><strong>Advanced Visualization Capabilities</strong></p>
+                    <p>The application generates four distinct types of data visualizations:</p>
+                    <p><strong>Position Progression Charts </strong>track each driver's position throughout the race, incorporating starting grid positions and handling retirements. The charts use team colors and distinct markers to differentiate drivers, with championship zones highlighted to show podium and points-paying positions.</p>
+                    <p><strong>Championship Impact Analysis </strong>displays points earned in each race alongside grid vs final position comparisons, revealing which drivers gained or lost positions from their starting positions.</p>
+                    <p><strong>Performance Dashboards </strong>combine multiple data perspectives in a single view: position progression, constructor championship standings after the selected race, position changes analysis, and driver championship standings for selected drivers.</p>
+                    <p><strong>Detailed Results Tables </strong>provide comprehensive race data including gap calculations to the race leader, best lap times, sector analysis, average speeds, and race status information, with color-coding for podium finishers and points-scoring positions.</p>
+                    
+                    <p><strong>Real-World Data Integration Challenges</strong></p>
+                    <p>Working with real Formula 1 data introduced complexities that no generic tutorial could have prepared me for. The FastF1 library provides access to actual telemetry data, but Formula 1 races are dynamic events where drivers retire mid-race, penalties are applied, and unusual circumstances create edge cases in the data.</p>
+                    <p>The application handles varying session lengths, data inconsistencies, and the sheer volume of information generated by a single Grand Prix weekend. Memory management became a significant concern when dealing with telemetry data from 24 complete race weekends, leading to the implementation of intelligent caching strategies and on-demand data loading.</p>
+                    <p>User experience considerations drove additional technical refinements. Data loading from the FastF1 API can take considerable time, especially for first-time requests. Implementing proper status indicators and error handling became essential to maintain a professional user experience.</p>
+                    
+                    <h2>Reflection: The Power of Context-Driven Learning</h2>
+                    <p>The success of this approach highlights the importance of learning programming in context rather than in abstract isolation. Every pandas operation, every matplotlib chart, and every tkinter component served a specific purpose in telling the story of the 2024 Formula 1 season. This connection between technique and purpose made complex concepts more memorable and immediately applicable.</p>
+                    <p>The structured lesson progression provided a clear sense of advancement and achievement. Each completed lesson brought tangible progress toward the ultimate goal of building a comprehensive season explorer. This contrasted sharply with the frustration of working through generic tutorials where the connection between individual exercises and real-world applications remained unclear.</p>
+                    <p>Working with Claude to develop this curriculum also meant I could adapt the learning path in real-time based on my progress and interests. When certain concepts proved challenging, we could spend additional time on foundational work. When I grasped something quickly, we could accelerate to more advanced topics. This flexibility is difficult to achieve with pre-recorded courses or static tutorials.</p>
+                    <p>This project demonstrates the potential for AI-assisted education to recreate the benefits of personalised instruction. By using AI not as a source of quick answers, but as a partner in designing and executing a comprehensive educational experience, I was able to achieve learning outcomes that traditional online resources hadn't delivered. The approach suggests that the future of technical education might involve more collaboration between human learners and AI systems to create customised learning pathways that connect technical skills to personal interests and goals.</p>
+                    
                 `
             },
             'GC': {
